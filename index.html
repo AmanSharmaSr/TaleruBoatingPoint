@@ -239,10 +239,12 @@ tr:nth-child(even) {
       var navcon=document.getElementsByClassName("navcnd");
       
       
-      var io=false;
+      var io=0;
       navcon[1].style.display="none";
+      
       function show(){
-        io=true;
+        if(io==0)
+        {
         var uli=document.getElementById("uli");
         var navg=document.getElementById("navg");
         navcon[1].style.display="inline";
@@ -251,8 +253,25 @@ tr:nth-child(even) {
         // uli.style.display="inline-block";
         navg.style.width="90%";
         navg.style.height="90%";
-
-        
+        snav.style.position="fixed";
+        snav.style.verticalAlign="top";
+        io=1;
+      }
+      else if(io==1)
+        {
+        var uli=document.getElementById("uli");
+        var navg=document.getElementById("navg");
+        navcon[0].style.display="inline";
+        navcon[1].style.display="none";
+        navcon[1].style.display="none";
+        uli.style.display="none";
+        // uli.style.display="inline-block";
+        navg.style.width="50px";
+        navg.style.height="50px";
+        snav.style.position="static";
+        snav.style.verticalAlign="middle";
+        io=0;
+      }
       }
 
       </script>
@@ -269,10 +288,10 @@ tr:nth-child(even) {
       var navcon=document.getElementsByClassName("navcnd");
       
       
-      var io=true;
+      var io=0;
       
       function hide(){
-        io=false;
+        io=0;
         var uli=document.getElementById("uli");
         var navg=document.getElementById("navg");
         navcon[0].style.display="inline";
@@ -281,7 +300,9 @@ tr:nth-child(even) {
         // uli.style.display="inline-block";
         navg.style.width="50px";
         navg.style.height="50px";
-
+        snav.style.position="static";
+        snav.style.verticalAlign="middle";
+        
         
       }  
     </script>
