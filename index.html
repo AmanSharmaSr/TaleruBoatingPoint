@@ -20,12 +20,65 @@
         header{
         font-size: 70px;
         }
+        .mreviews{
+          width:60%;
+          height: 600px;;
+        }
+        #shownav{
+          display: none;
+        }
+        ul{
+            list-style-type: none;
+            display: inline-flex;
+        } 
+        #navg{
+            background-color: rgb(27, 27, 27);
+            padding: 20px;
+            
+            text-align: right;
+            position: sticky;
+            top: 0px;
+            padding-right: 40px;
+            
+            
+            }
         }
         @media screen and (orientation:portrait){
         header{
         font-size: 30px;    
         
         }
+        .mreviews{
+          width:90%;
+          height: 90%;
+        }
+        #navg{
+          /* display: block; */
+          position: fixed;
+          top:10px;
+          left:10px;
+          width: 50px;
+          background-color: rgb(27, 27, 27);
+          text-align: center;
+          border-radius: 25px;
+
+        }
+        #navg ul li a{
+          display: inline-block;
+          flex-direction: row-reverse;
+          
+
+        }
+        ul{
+            list-style-type: none;
+            display: none;
+        } 
+        #shownav{
+          display: unset;
+          
+          width:100%;    
+        height: 100% ;    }
+          
         }
             
         
@@ -45,25 +98,16 @@
         h1{
             text-align: center;
         }
-        .navg{
-            background-color: rgb(27, 27, 27);
-            padding: 20px;
-            /* font-size: 30px; */
-            text-align: right;
-            position: sticky;
-            top: 0px;
-            padding-right: 40px;
-            /* width: 90%;       */
-            
-            }
-        .navg a{
+        
+          
+        #navg a{
             text-decoration: none;
             background-color: rgba(250, 253, 250, 0);
             color:honeydew;
             padding:10px;
             border-radius: 19px;
         }
-        .navg a:hover{
+        #navg ul a:hover{
             background-color: black
         }
         div{
@@ -71,15 +115,12 @@
         }
         #upu{
             position: fixed;
-            bottom: 10px;
-            right:10px;
+            bottom: 5px;
+            right:5px;
             /* clip-path: circle(49.3% at 50% 50%); */
             border-color: rgb(132, 252, 132)     ;
         }    
-        ul{
-            list-style-type: none;
-            display: inline-flex;
-        } 
+        
         .home{
             font-size: larger;
             padding: 50px;
@@ -142,6 +183,7 @@ tr:nth-child(even) {
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  display: none;
 }
 
 /* The dots/bullets/indicators */
@@ -186,23 +228,64 @@ tr:nth-child(even) {
 <body>
     <header id="up" > 
         <!-- <img src="tfg.png" width="100%" alt="" srcset=""> -->
-        <h1>Taleru Boating Point 
+        <h1>Taleru Boating Point
         </h1>
     </header>
-    <nav class="navg">
-        <ul >
-            <li><a href="#up" rel="noopener noreferrer">Home</a></li>
-            <li><a href="#gallery" rel="noopener noreferrer">Gallery</a></li>
-            <li><a href="#reviews"  rel="noopener noreferrer">Reviews</a></li>
-            <li><a href="#htr" rel="noopener noreferrer">How to Reach</a></li>
-            <li><a href="#about"  rel="noopener noreferrer">About</a></li>
-            
 
+    <nav id="navg">
+      <a id ="shownav" onclick="show()" style="font-size: 35px; vertical-align: middle;"><b class="navcnd">&triangledown;</b><b class="navcnd">&triangle;</b></a>
+      <script> 
+      var snav=document.getElementById("shownav");
+      var navcon=document.getElementsByClassName("navcnd");
+      
+      
+      var io=false;
+      navcon[1].style.display="none";
+      function show(){
+        io=true;
+        var uli=document.getElementById("uli");
+        var navg=document.getElementById("navg");
+        navcon[1].style.display="inline";
+        navcon[0].style.display="none";
+        uli.style.display="inline-block";
+        // uli.style.display="inline-block";
+        navg.style.width="90%";
+        navg.style.height="90%";
+
+        alert("Mission passed repect++");
+      }
+
+      </script>
+        <ul id="uli">
+            <li><a href="#up" rel="noopener noreferrer" onclick="hide()">Home</a></li>
+            <li><a href="#gallery" rel="noopener noreferrer" onclick="hide()">Gallery</a></li>
+            <li><a href="#reviews"  rel="noopener noreferrer" onclick="hide()">Reviews</a></li>
+            <li><a href="#htr" rel="noopener noreferrer" onclick="hide()">How to Reach</a></li>
+            <li><a href="#about"  rel="noopener noreferrer" onclick="hide()">About</a></li>
         </ul>
     </nav>
+    <script> 
+      var snav=document.getElementById("shownav");
+      var navcon=document.getElementsByClassName("navcnd");
+      
+      
+      var io=true;
+      
+      function hide(){
+        io=false;
+        var uli=document.getElementById("uli");
+        var navg=document.getElementById("navg");
+        navcon[0].style.display="inline";
+        navcon[1].style.display="none";
+        uli.style.display="none";
+        // uli.style.display="inline-block";
+        navg.style.width="50px";
+        navg.style.height="50px";
 
+        alert("Mission passed repect++");
+      }  
+    </script>
     
-    <a id="upu" href="#up"><img src="https://icon-icons.com/downloadimage.php?id=160899&root=2650/PNG/96/&file=move_up_icon_160899.png" alt="" srcset=""></a>
     <div class="home">Nestled in a valley in the midst of pine forests, the lake is an excellent site for activities like fishing, angling and boating. Himachal Pradesh Tourism department has built a boat house adjacent to the lake which has facilities for water sports like river rafting, motor boating, canoeing, and kayaking. Other than the water sport activities, pedal boats and rowing boats are also available for the tourists.
         The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
         Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the place.
@@ -316,7 +399,7 @@ tr:nth-child(even) {
 
     
     <h1>Reviews</h1>
-    <center><iframe width="700px" height="550px" src="mreview.html" background="white"></iframe></center>
+    <center><iframe class="mreviews" src="mreview.html" background="white"></iframe></center>
     
     <i  id="htr"></i>    
     <br><hr> <br>
@@ -386,5 +469,6 @@ tr:nth-child(even) {
             The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
             Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the place.
             Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple.........</marquee></p><br>
+            <a id="upu" href="#up"><img src="https://icon-icons.com/downloadimage.php?id=160899&root=2650/PNG/96/&file=move_up_icon_160899.png" alt="" srcset=""></a>
 </body>
 </html>
