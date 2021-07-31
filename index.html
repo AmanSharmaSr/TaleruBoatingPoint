@@ -17,9 +17,15 @@
             font-size: 20px;
         }
         @media screen and (orientation:landscape){
+        
+        
         header{
         font-size: 70px;
         }
+        @media screen and (max-width:1300px) {
+          header{
+        font-size: 55px;
+        }}
         .mreviews{
           width:60%;
           height: 600px;;
@@ -39,7 +45,7 @@
             position: sticky;
             top: 0px;
             padding-right: 40px;
-            
+            z-index: 99;
             
             }
             
@@ -59,6 +65,7 @@
           top:10px;
           left:10px;
           width: 50px;
+          height: 50px;
           background-color: rgb(27, 27, 27);
           text-align: center;
           border-radius: 25px;
@@ -66,7 +73,8 @@
           animation-play-state: paused;
           
           overflow: hidden;
-          animation-duration: 1.5s;
+          animation-duration: 0.5s;
+          z-index: 99;
         }
         @keyframes expand {
           from{
@@ -78,14 +86,14 @@
             
           } */
           to{
-            width:350px;
-            height: 600px;
+            width:200px;
+            height: 300px;
           }
         }
         @keyframes contract {
           from{
-            width:350px;
-            height: 600px;
+            width:200px;
+            height: 300px;
             
           }
           /* 50%{
@@ -110,8 +118,12 @@
         #shownav{
           display: unset;
           
-          width:100%;    
-        height: 100% ;    }
+          width:50px;    
+        height: 50px ; 
+      position: fixed;
+      top:0px;
+    left:0px;  
+         }
 
           
         }
@@ -149,11 +161,18 @@
             padding: 15px;
         }
         #upu{
-            position: fixed;
-            bottom: 5px;
-            right:5px;
+            text-align: right;
+            bottom: 10px;
+            right:10px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            /* overflow: hidden; */
             /* clip-path: circle(49.3% at 50% 50%); */
-            border-color: rgb(132, 252, 132)     ;
+            /* border-color: rgb(132, 252, 132)     ; */
+            position: fixed;
+            z-index: 99;
+
         }    
         
         .home{
@@ -167,8 +186,8 @@
         
         img{
             border-radius: 25px;
-            width:50px;
-            height:50px;
+            width:100%;
+            height:100%;
             background-color:rgba(80, 14, 80, 0.397);
         }
         header img{
@@ -179,10 +198,12 @@
             display: flex;
         }
         .slideshow-container {
-  width: 95%;
+  width: 90%;
   height: 20%;
   /* position: absolute; */
   margin: auto;
+  
+
 }
 table {
   font-family: arial, sans-serif;
@@ -268,7 +289,7 @@ tr:nth-child(even) {
     </header>
 
     <nav id="navg">
-      <a id ="shownav" onclick="show()" style="font-size: 35px; vertical-align: middle; width:50px; height:50px;"><b class="navcnd">&triangledown;</b><b class="navcnd">&triangle;</b></a>
+      <a id ="shownav" onclick="show()" style="font-size: 35px;"><b class="navcnd">&triangledown;</b><b class="navcnd">&triangle;</b></a>
       <script> 
       var snav=document.getElementById("shownav");
       var navcon=document.getElementsByClassName("navcnd");
@@ -288,13 +309,13 @@ tr:nth-child(even) {
         // uli.style.display="inline-block";
         navg.style.animationName="expand";
         navg.style.animationPlayState="running";
-        navg.style.width="350px";
-        navg.style.height="600px";
+        navg.style.width="200px";
+        navg.style.height="300px";
         // navg.style.width="90%";
         // navg.style.height="90%";
         
-        snav.style.position="fixed";
-        snav.style.verticalAlign="top";
+        // snav.style.position="fixed";
+        // snav.style.verticalAlign="top";
         // snav.style.text-align="left";
         uli.style.display="inline-block";
         io=1;
@@ -311,8 +332,8 @@ tr:nth-child(even) {
         // uli.style.display="inline-block";
         navg.style.width="50px";
         navg.style.height="50px";
-        snav.style.position="static";
-        snav.style.verticalAlign="middle";
+        // snav.style.position="static";
+        // snav.style.verticalAlign="middle";
         io=0;
       }
       }
@@ -345,8 +366,8 @@ tr:nth-child(even) {
         // uli.style.display="inline-block";
         navg.style.width="50px";
         navg.style.height="50px";
-        snav.style.position="static";
-        snav.style.verticalAlign="middle";
+        // snav.style.position="static";
+        // snav.style.verticalAlign="middle";
         
         
       }  
@@ -357,7 +378,7 @@ tr:nth-child(even) {
         Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the place.
         Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple</div>
 
-
+        <a id="upu" href="#up"><img src="Up.png" alt="" srcset=""></a>
     <hr  id="gallery">
     <h1>Gallery</h1>
     <div class="slideshow-container">
@@ -535,6 +556,6 @@ tr:nth-child(even) {
             The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
             Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the place.
             Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple.........</marquee></p><br>
-            <a id="upu" href="#up"><img src="Up.png" alt="" srcset=""></a>
+            
 </body>
 </html>
